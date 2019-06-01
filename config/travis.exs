@@ -15,4 +15,5 @@ config :custom_type, CustomType.Repo,
   password: "",
   database: "custom_type_test",
   hostname: "localhost",
-  pool: Ecto.Adapters.SQL.Sandbox
+  pool: Ecto.Adapters.SQL.Sandbox,
+  adapter: Ecto.Adapters.Postgres

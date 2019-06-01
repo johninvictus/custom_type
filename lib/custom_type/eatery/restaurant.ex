@@ -3,6 +3,7 @@ defmodule CustomType.Eatery.Restaurant do
   import Ecto.Changeset
 
   alias CustomType.Location
+  alias CustomType.Eatery.Restaurant
 
   schema "restaurants" do
     field :name, :string
@@ -20,17 +21,29 @@ defmodule CustomType.Eatery.Restaurant do
     |> put_location()
   end
 
-  defp put_location(changeset) do
-    case changeset do
-      %Ecto.Changeset{valid?: true, changes: change} ->
-        changeset
-        |> put_change(
-          :location,
-          %Location{latitude: change.lat, longitude: change.long}
-        )
+  def update_changeset(restaurant, attrs) do
+    restaurant
+    |> prepare_update()
+    |> changeset(attrs)
+  end
 
-      _ ->
-        changeset
+  @doc """
+  Prevent nil lat and long values, error when updating
+  """
+  def prepare_update(
+        %Restaurant{location: %Location{latitude: latitude, longitude: longitude}} = restaurant
+      ) do
+    %{restaurant | lat: latitude, long: longitude}
+  end
+
+  defp put_location(changeset) do
+    if(changeset.valid?) do
+      data = changeset |> apply_changes()
+
+      changeset
+      |> put_change(:location, %Location{latitude: data.lat, longitude: data.long})
+    else
+      changeset
     end
   end
 end

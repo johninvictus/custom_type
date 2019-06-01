@@ -69,7 +69,7 @@ defmodule CustomType.Eatery do
   """
   def update_restaurant(%Restaurant{} = restaurant, attrs) do
     restaurant
-    |> Restaurant.changeset(attrs)
+    |> Restaurant.update_changeset(attrs)
     |> Repo.update()
   end
 

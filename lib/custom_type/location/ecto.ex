@@ -21,7 +21,7 @@ if Code.ensure_loaded?(Ecto.Type) do
 
     # You can also use type used in `Ecto.Migration` like :string, :float, ..etc
 
-    def type, do: :location
+    def type, do: :locationz
 
     @doc """
     This functions takes a value and converts it to your desired Ecto custom type

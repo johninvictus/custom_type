@@ -1,5 +1,5 @@
 if Code.ensure_loaded?(Ecto.Type) do
-  defmodule CustomType.Ecto do
+  defmodule CustomType.Location.Ecto do
     @moduledoc """
     This is the file that will interact with the `Ecto.Schema`
     And return the appropriate values

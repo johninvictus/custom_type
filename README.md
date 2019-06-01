@@ -1,5 +1,7 @@
 # CustomType
 
+[![CircleCI](https://circleci.com/gh/johninvictus/custom_type.svg?style=svg)](https://circleci.com/gh/johninvictus/custom_type)
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`

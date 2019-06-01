@@ -20,4 +20,9 @@ defmodule CustomType.Location.EctoTest do
       assert Location.Ecto.dump("wrong data") == :error
     end
   end
+
+  test "load function" do
+    assert Location.Ecto.load(@location_map) == Location.Ecto.cast(@location_map)
+    assert Location.Ecto.load("Invalid") == :error
+  end
 end

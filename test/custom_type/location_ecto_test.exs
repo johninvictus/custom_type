@@ -4,6 +4,7 @@ defmodule CustomType.Location.EctoTest do
   """
   use CustomType.DataCase
   alias CustomType.Location
+  alias CustomType.Eatery.Restaurant
 
   describe "location_ecto" do
     @location_map {44.968046, -94.420307}
@@ -27,5 +28,14 @@ defmodule CustomType.Location.EctoTest do
   end
 
   test "type in schema" do
+    changeset =
+      Ecto.Changeset.cast(
+        %Restaurant{},
+        %{location: %Location{latitude: 44.968046, longitude: -94.420307}},
+        [:location],
+        ~w()
+      )
+
+    assert changeset.valid?
   end
 end

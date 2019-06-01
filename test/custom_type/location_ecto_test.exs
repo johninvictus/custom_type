@@ -25,4 +25,7 @@ defmodule CustomType.Location.EctoTest do
     assert Location.Ecto.load(@location_map) == Location.Ecto.cast(@location_map)
     assert Location.Ecto.load("Invalid") == :error
   end
+
+  test "type in schema" do
+  end
 end

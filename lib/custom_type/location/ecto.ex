@@ -31,5 +31,14 @@ if Code.ensure_loaded?(Ecto.Type) do
     def cast({lat, long}), do: {:ok, %Location{latitude: lat, longitude: long}}
 
     def cast(_), do: :error
+
+    @doc """
+    dump function, it convertes your custom type to map that can be stored to the database
+    """
+    def dump(%Location{latitude: lat, longitude: long}) do
+      {:ok, {lat, long}}
+    end
+
+    def dump(_), do: :error
   end
 end

@@ -7,6 +7,7 @@
                         'Elixir.CustomType.DataCase',
                         'Elixir.CustomType.Eatery',
                         'Elixir.CustomType.Eatery.Restaurant',
+                        'Elixir.CustomType.Ecto','Elixir.CustomType.Location',
                         'Elixir.CustomType.Repo','Elixir.CustomTypeWeb',
                         'Elixir.CustomTypeWeb.ChannelCase',
                         'Elixir.CustomTypeWeb.ConnCase',

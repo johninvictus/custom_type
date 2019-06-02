@@ -2,6 +2,9 @@
 
 [![CircleCI](https://circleci.com/gh/johninvictus/custom_type.svg?style=svg)](https://circleci.com/gh/johninvictus/custom_type)
 
+This project is used to aid in writing of this article.
+https://invictusbytes.blogspot.com/2019/06/how-to-create-elixir-ecto-custom-type.html
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
